@@ -1,55 +1,61 @@
-import java.util.Arrays;
-import java.util.Scanner;
-
+import java.util.*;
+import java.io.*;
 public class Task1 {
-//Первое задание
-    static void arrayWithSize() {       //Метод, принимающий размер массива и строку на вход
-        int check = 0;
-        int max = 0;
-        int min = 0;
-        int five = 0;
-        int arrSize;
-        System.out.print("Размер массива ");
-        Scanner sc = new Scanner(System.in);
-        //ввод размера массива
-        arrSize = sc.nextInt();
-        int[] newArr = new int[arrSize];
+    /*******Задание 1******
+     На вход через консоль принимается размер массива,
+     вывод: массив, макс и мин число, количество повторений числа 5 */
+  static   int check = 0; //счетчик для элементов массива
+    static int five = 0; //счетчик для числа 5
+    static int arraySize; //размер массива
+//    static int max; //максимальный элемент
+static int [] newArr;
 
-        System.out.println("Введите числа через пробел");
-        do {
-        newArr[check] = sc.nextInt();
-            check++;
-        }
-        while (check < arrSize) ;
-        //Вывод массива с учетом заданного размера
-        System.out.println("Ваш массив");
-        System.out.println(Arrays.toString(newArr));
-
-        //максимальное и минимальное число в массиве
-
-        for (int i = 0; i < newArr.length-1; i++){
-
-            if (newArr[i] < newArr[i+1]){
-                min = newArr[i];
-            }
-            else {
-                min = newArr[i + 1];
-            }
-            if (newArr[i] > newArr[i+1]){
-                max = newArr[i];
-            }
-            else {
-                max = newArr[i + 1];
-            }
-            if (newArr[i] == 5){
-                five++;
-            }
-        }
-        System.out.println("Максимальное: " + max); //Вывод максимального
-        System.out.println("Минимальное: "+ min); //Вывод минимального
-        System.out.println("Количество повторений числа 5: "+ five); //Количество повторений числа 5
+static void arrayWithSize() {
+     System.out.print("Input array size: ");
+        //Ввод размера массива
+       Scanner scanner = new Scanner(System.in);
+    arraySize = scanner.nextInt();
+       int[] newArr = new int[arraySize];
+    System.out.println("Input numbers: ");
 
 
+    Scanner sc = new Scanner(System.in);
+
+    while (check < arraySize) {
+
+              newArr[check] = sc.nextInt();
+        check++;
     }
+
+
+    //Вывод массива с учетом заданного размера
+    System.out.println("Your array: ");
+    System.out.println(Arrays.toString(newArr));
+
+
+    //Максимальное и минимальное число в массиве
+    int min = newArr[0];
+    int max = newArr[0];
+    for (int i = 0; i < newArr.length; i++) {
+
+        if (min >= newArr[i]) {
+            min = newArr[i];
+        }
+        if (max <= newArr[i]) {
+            max = newArr[i];
+        }
+        //Количество повторений числа 5
+        if (newArr[i] == 5) {
+            five++;
+        }
+    }
+    System.out.println("Maximum " + max); //Вывод максимального
+    System.out.println("Minimum " + min); //Вывод минимального
+    System.out.println("5 is return: " + five); //Количество повторений числа 5*/
 }
+
+            }
+
+
+
 
